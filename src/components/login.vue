@@ -1,12 +1,13 @@
 <template>
   <div>
-    <router-view></router-view>
+      呵呵哒
   </div>
 </template>
-
 <script>
-export default {};
+export default {
+  
+}
 </script>
-
 <style>
+
 </style>
