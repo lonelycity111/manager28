@@ -25,15 +25,6 @@
 </template>
 <script>
 export default {
-  beforeCreate() {
-    if (window.sessionStorage.getItem("token")) {
-    } else {
-      this.$message.warning("请先登录哦");
-      setTimeout(() => {
-        this.$router.push("/login");
-      }, 1000);
-    }
-  },
   methods: {
     loginout() {
       this.$confirm("你确定要退出吗?", "提示", {
