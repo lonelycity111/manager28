@@ -18,8 +18,26 @@
       </el-row>
     </el-header>
     <el-container>
-      <el-aside width="200px" class="index-aside">Aside</el-aside>
-      <el-main class="index-main">Main</el-main>
+      <el-aside width="200px" class="index-aside">
+        <el-menu
+          default-active="2"
+          class="el-menu-vertical-demo"
+          router
+        >
+          <el-submenu index="1">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>用户管理</span>
+            </template>
+              <el-menu-item index="users">
+                <span  class="el-icon-menu"></span>用户列表
+              </el-menu-item>
+          </el-submenu>
+        </el-menu>
+      </el-aside>
+      <el-main class="index-main">
+        <router-view></router-view>
+      </el-main>
     </el-container>
   </el-container>
 </template>
@@ -33,16 +51,14 @@ export default {
         type: "warning"
       })
         .then(() => {
-          window.sessionStorage.removeItem('token');
-          this.$router.push('/login')
+          window.sessionStorage.removeItem("token");
+          this.$router.push("/login");
         })
         .catch(() => {
           this.$message.error("你真好");
-          
         });
     }
-  },
-  
+  }
 };
 </script>
 <style>
@@ -56,8 +72,9 @@ export default {
 }
 .index-aside {
 }
-.index-main {
+.el-main,.index-main {
   background-color: #e9eef3;
+  padding-top: 0px;
 }
 .header-center {
   text-align: center;

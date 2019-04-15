@@ -51,16 +51,16 @@ export default {
           .post('login',this.formData)
           .then(res=>{
              if(res.data.meta.status===400){
-               this.$message.error(res.data.meta.msg);
+              //  this.$message.error(res.data.meta.msg);
              }else{
-               this.$message.success(res.data.meta.msg);
+              //  this.$message.success(res.data.meta.msg);
               //  console.log(res);
               window.sessionStorage.setItem('token',res.data.data.token)
-              this.$router.push('/index');
+              this.$router.push('/');
              }
           })
         } else {
-          this.$message.error("请输入正确的用户名和密码");
+          // this.$message.error("请输入正确的用户名和密码");
         }
       });
     }
